@@ -8,7 +8,7 @@ Exemplo de renderização CreativeTim em C# ASP.NET Core 10 com banco de dados P
 | Tecnologia | Descrição |
 |-----------|-----------|
 | **Argon** | Painéis administrativos, sistemas de CRM, controle de dados e interfaces de gerenciamento |
-| **BootStrap 4** | Serviços de autenticação, autorização e gerenciamento de acessos,  garantindo que apenas as pessoas e entidades autorizadas acessem recursos e dados |
+| **BootStrap** | Serviços de autenticação, autorização e gerenciamento de acessos,  garantindo que apenas as pessoas e entidades autorizadas acessem recursos e dados |
 | **Identity** | Serviços de autenticação, autorização e gerenciamento de acessos,  garantindo que apenas as pessoas e entidades autorizadas acessem recursos e dados |
 
 #### 💬 Requisitos do Projeto
