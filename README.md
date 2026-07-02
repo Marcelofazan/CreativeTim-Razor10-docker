@@ -7,6 +7,7 @@ Exemplo de renderização CreativeTim em C# ASP.NET Core 10 com banco de dados P
 #### 📋 O que voçê vai ver nesse Projeto
 | Tecnologia | Descrição |
 |-----------|-----------|
+| **Bootstrap** | Famework front-end de códigos prontos em HTML, CSS e JavaScript para criar sites e interfaces web responsivas |
 | **Identity** | Serviços de autenticação, autorização e gerenciamento de acessos,  garantindo que apenas as pessoas e entidades autorizadas acessem recursos e dados |
 
 #### 💬 Requisitos do Projeto
