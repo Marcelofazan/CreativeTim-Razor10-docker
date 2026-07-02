@@ -83,6 +83,10 @@ Para verificar se a database **creativeTim** está no docker acesse o banco com 
 **Observação:** Para manipular os dados do **Postgres** no **Docker** alterar **appsettings**, após configurado o banco de dados.
 - Deve se trocar **Server=localhost** por **Host=db** nos arquivos **appsettings** , os Postgres aceita o dialeto tanto a palavra **Server** como a palavra **Host** para distinguir o Servidor. 
 
+| Host | Conexão |
+|-----------|-----------|
+| **Local** | Server=localhost |
+| **Docker** | Host=db ou Server=db |
 
 VSCode Terminal [4]
 ```bash 
