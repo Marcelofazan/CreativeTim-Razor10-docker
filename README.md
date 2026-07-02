@@ -8,19 +8,19 @@ Exemplo de renderização CreativeTim em C# ASP.NET Core 10 com banco de dados P
 
 #### 💬 Requisitos do Projeto
 
-- 1. Garante que a pasta existe no seu Windows
+- Garante que a pasta existe no seu Windows
 ```bash
 mkdir -Force "$env:USERPROFILE\.aspnet\https"
 ```
-- 2. Limpa resquícios de certificados antigos
+- Limpa resquícios de certificados antigos
 ```bash
 dotnet dev-certs https --clean
 ```
-- 3. Cria um novo certificado confiável no Windows
+- Cria um novo certificado confiável no Windows
 ```bash
 dotnet dev-certs https --trust
 ```
-- 4. Exporta o arquivo PFX com uma senha padrão para a pasta correta
+- Exporta o arquivo PFX com uma senha padrão para a pasta correta
 ```bash
 dotnet dev-certs https -ep "$env:USERPROFILE\.aspnet\https\argonapp.pfx" -p "CrypticPassword99!"
 ```
@@ -72,7 +72,6 @@ A aplicação ficará disponivel em **https://localhost:44308/**
 Para primeiro acesso usuario: **admin@argon.com** senha: **Secret1+**
 
 #### ⚙️ Configuração - Postgres Docker 
-
 Para verificar se a database **creativeTim** está no docker acesse o banco com os commandos, para verificar as tabelas. 
 
 VSCode Terminal [4]
