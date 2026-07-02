@@ -1,0 +1,28 @@
+.dockerignore
+.env
+.git
+.gitignore
+.vs
+.vscode
+docker-compose.yml
+docker-compose.*.yml
+*/bin
+*/obj
+**/.user
+**/.suo
+**/bin/
+**/obj/
+**/.vs/
+**/.vscode/
+**/.git/
+
+# Don't push environment-specific appsettings files in 
+# the Docker image
+*/appsettings.*.json
+
+# Ignore the local development SQLite database
+*/global.json
+
+# This is only required for local development, it is expected
+# that the Docker image will have the correct SDK version
+*/sqlite.db

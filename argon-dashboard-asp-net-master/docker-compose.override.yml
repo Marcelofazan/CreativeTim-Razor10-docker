@@ -1,0 +1,19 @@
+
+services:
+  creativetim.argon.dotnetcore.free:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_HTTPS_PORT=44308
+      - CONNECTIONSTRINGS__POSTGRESCONNECTION=Server=db;Port=5432;Database=creativeTim;User Id=postgres;Password=creativeTim
+      - REDIS__INSTANCENAME=redis
+      - REDIS__CONNECTIONSTRING=redis:6379 
+      - Kestrel__Certificates__Default__Password=CrypticPassword99!
+      - Kestrel__Certificates__Default__Path=/https/argonapp.pfx
+
+    ports:
+      - "60151:80"
+      - "44308:443"
+    volumes:
+      - ${USERPROFILE}/.aspnet/https:/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro

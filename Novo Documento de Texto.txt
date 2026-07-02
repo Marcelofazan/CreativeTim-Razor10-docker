@@ -1,0 +1,84 @@
+
+
+cd CreativeTim.Argon.DotNetCore.Free
+dotnet restore
+dotnet build
+dotnet ef migrations add InitialCreate
+
+
+VSCode Terminal [1]
+
+- Iniciar Docker
+```bash
+docker-compose up --build  
+```
+
+VSCode Terminal [2]
+
+- Realizar Migrations 
+```bash
+cd CreativeTim.Argon.DotNetCore.Free
+dotnet ef database update 
+```
+
+VSCode Terminal [3]
+
+- Fechar Container
+```bash
+docker-compose down 
+```
+
+https://localhost:44308/
+
+
+# 1. Garante que a pasta existe no seu Windows
+mkdir -Force "$env:USERPROFILE\.aspnet\https"
+
+# 2. Limpa resquícios de certificados antigos
+dotnet dev-certs https --clean
+
+# 3. Cria um novo certificado confiável no Windows
+dotnet dev-certs https --trust
+
+# 4. Exporta o arquivo PFX com uma senha padrão para a pasta correta
+dotnet dev-certs https -ep "$env:USERPROFILE\.aspnet\https\argonapp.pfx" -p "CrypticPassword99!"
+
+
+
+docker exec -it argon-dashboard-asp-net-master-db-1 psql -U postgres
+
+
+\l
+
+\c creativeTim
+
+\dt
+
+
+Digite ; e aperte Enter.
+Se você já digitou texto errado na linha anterior, use o atalho Ctrl + C para cancelar o comando atual e limpar a linha.
+Digite o comando completo novamente em uma única linha e finalize com ;:
+
+
+
+	SELECT * FROM "AspNetRoles";
+	SELECT * FROM "AspNetUsers";
+	SELECT * FROM "AspNetUserRoles";
+
+	SELECT * FROM "AspNetRoleClaims";
+	SELECT * FROM "AspNetUserClaims";
+	SELECT * FROM "AspNetUserLogins";
+	SELECT * FROM "AspNetUserTokens";
+	SELECT * FROM "DataProtectionKeys";
+
+docker inspect --format='{{json .State.Health}}' argon-dashboard-asp-net-master-db-1
+
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' argon-dashboard-asp-net-master-db-1
+
+AspNetRoles: Armazena os papéis/perfis de acesso (ex: Admin, Usuário).
+AspNetUsers: Armazena os dados dos usuários cadastrados.
+AspNetUserRoles: Tabela de associação (muitos-para-muitos) que vincula quais usuários possuem quais papéis.
+AspNetRoleClaims: Permissões ou reivindicações específicas atreladas a um papel.
+AspNetUserClaims: Permissões específicas atribuídas diretamente a um usuário.
+AspNetUserLogins: Usado para logins externos (como Google, Facebook, Microsoft).
+AspNetUserTokens: Armazena tokens de autenticação do usuário.

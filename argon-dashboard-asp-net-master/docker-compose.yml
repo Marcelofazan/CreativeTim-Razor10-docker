@@ -1,0 +1,39 @@
+services:
+  creativetim.argon.dotnetcore.free:
+    image: ${DOCKER_REGISTRY-}creativetimargondotnetcorefree
+    build:
+      context: .
+      dockerfile: CreativeTim.Argon.DotNetCore.Free/Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy # NOVO: Só liga o .NET quando o healthcheck do DB passar
+      redis:
+        condition: service_started
+
+  db:
+    # We need to do this to get the PostgreSQL container to work on Windows
+    build:
+      context: .
+      dockerfile: Dockerfile.postgresql-container
+    environment:
+      PGDATA: '/var/lib/postgresql/data'
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'creativeTim'
+      POSTGRES_DB: 'creativeTim'
+    ports:
+      - 5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d creativeTim"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+  redis:
+    image: redis:5-alpine
+    ports:
+      - 6379:6379
+
+volumes:
+  pgdata:
+    driver: local
