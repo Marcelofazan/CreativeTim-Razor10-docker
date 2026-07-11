@@ -59,7 +59,7 @@ VSCode Terminal [1]
 docker-compose up --build
 ```
 
-VSCode Terminal [3]
+VSCode Terminal [2]
 - Fechar Container
 ```bash
 docker compose down 
