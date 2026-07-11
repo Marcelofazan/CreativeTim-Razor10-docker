@@ -13,24 +13,7 @@ Exemplo de renderização Argon Dashboard em C# ASP.NET Core 10 EF com banco de 
 
 #### 💬 Requisitos do Projeto
 - Necessário **Docker** instalado.
-- Instalar Certificado válido **SSL**
- 
-- Garante que a pasta existe no seu Windows
-```bash
-mkdir -Force "$env:USERPROFILE\.aspnet\https"
-```
-- Limpa resquícios de certificados antigos
-```bash
-dotnet dev-certs https --clean
-```
-- Cria um novo certificado confiável no Windows
-```bash
-dotnet dev-certs https --trust
-```
-- Exporta o arquivo PFX com uma senha padrão para a pasta correta
-```bash
-dotnet dev-certs https -ep "$env:USERPROFILE\.aspnet\https\argonapp.pfx" -p "CrypticPassword99!"
-```
+- Certificado válido **SSL/TLS**
 
 #### ⚠️ String de conexão do banco 
 Alterar em todos arquivos **YML** e **appsettings** o campo **[SUA_SENHA]** colocar sua senha localhost do Postgres.
@@ -130,8 +113,7 @@ SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = 'creative
 DROP DATABASE "creativeTim";
 ```
 
-
-#### ⚙️ Identity ASPNET relação de tabelas
+#### Identity ASPNET relação de tabelas
 | Tabela | Descrição |
 |-----------|-----------|
 | **AspNetRoles** |  Armazena os papéis/perfis de acesso (ex: Admin, Usuário). |
@@ -142,4 +124,22 @@ DROP DATABASE "creativeTim";
 | **AspNetUserLogins** |  Usado para logins externos (como Google, Facebook, Microsoft). |
 | **AspNetUserTokens** |  Armazena tokens de autenticação do usuário. |
 
+
+ #### ⚙️ Instalar Certificado válido **SSL/TLS
+- Garante que a pasta existe no seu Windows
+```bash
+mkdir -Force "$env:USERPROFILE\.aspnet\https"
+```
+- Limpa resquícios de certificados antigos
+```bash
+dotnet dev-certs https --clean
+```
+- Cria um novo certificado confiável no Windows
+```bash
+dotnet dev-certs https --trust
+```
+- Exporta o arquivo PFX com uma senha padrão para a pasta correta
+```bash
+dotnet dev-certs https -ep "$env:USERPROFILE\.aspnet\https\argonapp.pfx" -p "CrypticPassword99!"
+```
 
