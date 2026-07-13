@@ -12,7 +12,7 @@ Exemplo de renderização Argon Dashboard TLS/SSL em C# ASP.NET Core 10 EF com b
 | **Identity** | Serviços de autenticação, autorização e gerenciamento de acessos,  garantindo que apenas as pessoas e entidades autorizadas acessem recursos e dados |
 
 #### 💬 Requisitos do Projeto
-- Necessário **Docker** instalado.
+- Necessário Docker instalado.
 - Realizar Migrations EntityFramework .NET
 - Necessário Certificados em pasta raiz.
 
